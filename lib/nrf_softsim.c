@@ -177,7 +177,7 @@ static void softsim_req_task(struct k_work *item) {
         if (ctx && !ss_is_suspended(ctx)) {  // ignore if suspended. Then we just keep the context around
           ss_free_ctx(ctx);
           ctx = NULL;
-          deinit_fs();  // Commit any cached changes to flash
+          // deinit_fs();  // Commit any cached changes to flash
         } else {
           LOG_DBG("SoftSIM suspended. Keeping context.");
         }
